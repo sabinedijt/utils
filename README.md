@@ -1,6 +1,6 @@
 # Qubit
 
-Reusable solutions to be used in Qubit experiences
+Reusable solutions to be used in Qubit experiences. Add this code to an experience that's always executed and you can use it in any other experience.
 
 - nonBounce tracking
 - jqPoller
