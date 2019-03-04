@@ -1,6 +1,3 @@
-#global nonBounce tracking
-
-global.js:
 var globalQBCode = window.globalQBCode = {
   nonBounce: function(expOptions){
     var cm = window.globalQBCode.cm = window.globalQBCode.cm || require('cookieman'),
@@ -26,5 +23,3 @@ var globalQBCode = window.globalQBCode = {
     }
   }
 }
-
-
