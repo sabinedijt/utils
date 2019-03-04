@@ -26,15 +26,15 @@ var globalQBCode = window.globalQBCode = {
     var num = counter || 0
     num++
     var interval = ((num < 50) ? 100 : ((num < 70) ? 250 : (num < 80 ? 500 : undefined)))
-    var callbackitems = []
+    var cbitems = []
     items.forEach(function(e, i) {
       if (typeof e === 'function' && e())
-        callbackitems.push(e())
+        cbitems.push(e())
       else if (typeof e === 'boolean' || typeof e === 'number' || typeof e === 'object')
-        callbackitems.push(e)
+        cbitems.push(e)
       else if (typeof e === 'string') {
         if (!/^window\./i.test(e) && document.querySelectorAll(e).length > 0)
-          callbackitems.push(document.querySelectorAll(e).length === 1 ? document.querySelector(e) : document.querySelectorAll(e))
+          cbitems.push(document.querySelectorAll(e).length === 1 ? document.querySelector(e) : document.querySelectorAll(e))
         else {
           e = e.replace(/^window\./i, '')
           var tmpval,
@@ -46,11 +46,11 @@ var globalQBCode = window.globalQBCode = {
             if(isFunction && tmpval !== undefined) tmpval = tmpval()
           })
           //if value is "" or 0 you still want it returned
-          tmpval !== undefined && callbackitems.push(tmpval)
+          tmpval !== undefined && cbitems.push(tmpval)
         }
       }
     })
-    if (callbackitems.length === items.length) callback.apply(this, callbackitems)
+    if (cbitems.length === items.length) callback.apply(this, cbitems)
     else if (interval) setTimeout(function() {
       this.jsPoller(items, callback, num)
     }.bind(this), interval)
@@ -60,15 +60,15 @@ var globalQBCode = window.globalQBCode = {
     num++
     var interval = ((num < 50) ? 100 : ((num < 70) ? 250 : (num < 80 ? 500 : undefined)))
     if(window.$) {
-        var callbackitems = []
+        var cbitems = []
         items.forEach(function(e, i) {
             if (typeof e === 'function' && e())
-              callbackitems.push(e())
+              cbitems.push(e())
             else if (typeof e === 'boolean' || typeof e === 'number' || typeof e === 'object')
-              callbackitems.push(e)
+              cbitems.push(e)
             else if (typeof e === 'string') {
               if (!/^window\./i.test(e) && $(e).length)
-                callbackitems.push($(e))
+                cbitems.push($(e))
               else {
                 e = e.replace(/^window\./i, '')
                 var tmpval,
@@ -80,11 +80,11 @@ var globalQBCode = window.globalQBCode = {
                   if(isFunction && tmpval !== undefined) tmpval = tmpval()
                 })
                 //if value is "" or 0 you still want it returned
-                tmpval !== undefined && callbackitems.push(tmpval)
+                tmpval !== undefined && cbitems.push(tmpval)
               }
             }
         })
-        if (callbackitems.length === items.length) callback.apply(this, callbackitems)
+        if (cbitems.length === items.length) callback.apply(this, cbitems)
         else if (interval) setTimeout(function() {
           this.jqPoller(items, callback, num)
         }.bind(this), interval)
