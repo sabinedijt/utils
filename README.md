@@ -29,7 +29,12 @@ and
 nb.trackCookie('hp')
 ```
 
-When you use the nonBounce you won't have to import another cookieman in your experience, you can use the one from the globalcode by calling
+When nonBounce is detected a customGoal is fired formatted as
+```
+experienceID:nonBounce:pagenameFromTheArray
+```
+
+When you use the nonBounce you won't have to import another cookieman into your experience, you can use the one from the globalcode by calling
 ```
 window.globalQBCode.cm
 ```
