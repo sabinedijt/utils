@@ -54,6 +54,7 @@ var globalQBCode = window.globalQBCode = {
               }
             }
         })
+        //if all elements are present, return them in the callback function so you can use them without having to retrieve them again
         if (cbitems.length === items.length) callback.apply(this, cbitems)
         else if (interval) setTimeout(function() {
           this.jqPoller(items, callback, num)
@@ -92,6 +93,7 @@ var globalQBCode = window.globalQBCode = {
         }
       }
     })
+    //if all elements are present, return them in the callback function so you can use them without having to retrieve them again
     if (cbitems.length === items.length) callback.apply(this, cbitems)
     else if (interval) setTimeout(function() {
       this.jsPoller(items, callback, num)
