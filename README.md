@@ -41,8 +41,8 @@ window.globalQBCode.cm
 
 
 ## jqPoller
-This is a poller like qubit's core poller, but instead of using qubit's jQuery, it used the jquery you might already have implemented in your website, to prevent double loading of jQuery. Ask qubit about possibly removing the jQuery from their core for your website.
-You can call it in the same way as the qubit poller using
+This is a poller like Qubit's core poller, but instead of using Qubit's jQuery, it used the jquery you might already have implemented in your website, to prevent double loading of jQuery. Ask Qubit about possibly removing the jQuery from their core for your website.
+You can call it in the same way as the Qubit poller using
 ```
 window.globalQBCode.jqpoller(elementArray, function(the callback elements you want to use){
 //do something with your callback elements if you want
