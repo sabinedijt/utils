@@ -17,7 +17,9 @@ pagearray is an array with pathnames of the pages you want to track, doesn't hav
 Example: ['hp', 'product']
 
 If your nonBounce tracking requires specific conditions, you can initialize using
+```
 var nb = new window.globalQBCode.nonBounce(options)
+```
 And then set and track in the places you want using, for example:
 ```
 nb.setCookie('hp')
