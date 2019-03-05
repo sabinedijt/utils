@@ -47,7 +47,8 @@ You can call it in the same way as the Qubit poller using, for example
 ```
 var requiredElements = ['body header', 'window.someProperty']
 window.globalQBCode.jqPoller(requiredElements, function(header, someprop){
-  //do something with yoru callback elements, like the header, which returns $('body header') and someprop, which returns the value of window.someProperty
+  //do something with your callback properties, like the header, which returns $('body header') and someprop, which returns the value of window.someProperty
+  //you can also choose to not set function parameters
 })
 ```
 
@@ -58,6 +59,7 @@ You can call it in the same way as the Qubit poller using
 var requiredElements = ['body header', 'window.someProperty']
 window.globalQBCode.jsPoller(requiredElements, function(header, someprop){
   //do something with your callback elements if you want, like the header, which returns window.querySelector('body header') or document.querySelectorAll('body header'), depending on the number of elements found, for ease of access
-  //And someprop, which returns the value of window.someProperty
+  //and someprop, which returns the value of window.someProperty
+  //you can also choose to not set function parameters
 })
 ```
